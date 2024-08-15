@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eurekaserver" />
+        <module name="fegin" />
+        <module name="hystrix" />
+        <module name="mbg" />
+        <module name="spring-cloud-mybatis" />
+        <module name="eurekaclient" />
+        <module name="zuul" />
+        <module name="javademo" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="eurekaclient" options="-parameters" />
+      <module name="eurekaserver" options="-parameters" />
+      <module name="fegin" options="-parameters" />
+      <module name="hystrix" options="-parameters" />
+      <module name="javademo" options="-parameters" />
+      <module name="mbg" options="-parameters" />
+      <module name="spring-cloud-mybatis" options="-parameters" />
+      <module name="zuul" options="-parameters" />
+    </option>
+  </component>
+</project>
