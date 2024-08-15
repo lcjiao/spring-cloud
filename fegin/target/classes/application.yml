@@ -1,0 +1,16 @@
+server:
+  port: 8763
+spring:
+  application:
+    name: spring-fegin-demo
+
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    instanceId: 127.0.0.1:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+

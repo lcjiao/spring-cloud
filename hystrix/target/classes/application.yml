@@ -1,0 +1,46 @@
+server:
+  port: 8764
+spring:
+  application:
+    name: spring-histrix-demo
+
+feign:
+  hystrix:
+    #开启feign的hystrix支持,默认是false
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000
+      requestLog:
+        enabled: false
+      circuitBreaker:
+        sleepWindowInMilliseconds: 1000
+  threadpool:
+    default:
+      coreSize: 80
+
+ribbon:
+  # 饥饿加载
+  eager-load:
+    # 是否开启饥饿加载
+    enabled: true
+    # 饥饿加载的服务
+    clients: spring-client-demo
+  ReadTimeout: 60000
+  ConnectTimeout: 5000
+
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    instanceId: 127.0.0.1:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+

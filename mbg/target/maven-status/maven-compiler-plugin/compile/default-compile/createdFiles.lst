@@ -1,0 +1,6 @@
+com/mbg/mapper/UserMapper.class
+com/mbg/generator/Generator.class
+com/mbg/config/DruidConfig.class
+com/mbg/controller/HelloController.class
+com/mbg/entity/User.class
+com/mbg/MbgApplication.class

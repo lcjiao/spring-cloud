@@ -1,0 +1,28 @@
+server:
+  port: 8765
+spring:
+  application:
+    name: spring-cloud-mybatis
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.249.60.100:3306/qfconfigcenter_v20_dev?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: qf_collect
+    password: P1#cTgeEaY.J*krUfuC)
+    jpa:
+      show-sql: true
+
+mybatis:
+  mapper-locations: classpath:mybatis/*.xml
+  type-aliases-package: com.jcl.mybatis.entity
+
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    instanceId: 127.0.0.1:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+

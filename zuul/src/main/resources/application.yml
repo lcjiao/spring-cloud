@@ -1,0 +1,26 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: zuul
+
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    instanceId: 127.0.0.1:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
+zuul:
+  prefix: /gateway
+
+  ignored-patterns:
+    /gateway/spring-client-demo/**
+
+  routes:
+    client-service:
+      path: /client/**
+      serviceId: spring-client-demo
